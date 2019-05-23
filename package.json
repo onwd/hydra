@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/onwd/hydra/issues"
   },
-  "homepage": "https://github.com/onwd/hydra#readme"
+  "homepage": "https://github.com/onwd/hydra#readme",
+  "dependencies": {
+    "ws": "^7.0.0"
+  }
 }
