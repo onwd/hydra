@@ -15,6 +15,14 @@ class Master {
     this.wss = new WebSocket.Server({
       port: this.port
     });
+
+    this.wss.on('open', () => {
+      console.log('Client connected');
+    });
+
+    this.wss.on('message', (data) => {
+      console.log('Message received', data);
+    });
   }
 
   stop() {
