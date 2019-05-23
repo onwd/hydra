@@ -1,0 +1,22 @@
+{
+  "name": "@onwd/hydra",
+  "version": "0.0.0",
+  "description": "Distributed computing for Node.js.",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onwd/hydra.git"
+  },
+  "author": "onwd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onwd/hydra/issues"
+  },
+  "homepage": "https://github.com/onwd/hydra#readme"
+}
