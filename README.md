@@ -16,7 +16,7 @@ Hydra provides the following entities:
     - works on a `Task` using provided definition and a `Subspace`;
     - responds to `Master` with calculation result.
   - **Task**:
-    - stores `dependencies`, `f(x)` to calculate and a `Space`.
+    - stores `dependencies`, `f(x)` and a `Space`.
   - **Space**:
     - stores `type` of the `Space`, `values` array or a value generator function.
   - **Space**:
