@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "outDir": "./build/",
+    "target": "ESNext"
+  },
+  "include": [
+    "./master/",
+    "./worker/"
+  ]
+}
