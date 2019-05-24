@@ -20,7 +20,7 @@ class Master {
       port: this.port
     });
 
-    this.wss.on('open', this.onClientConnected.bind(this));
+    this.wss.on('connection', this.onWorkerConnected.bind(this));
     this.wss.on('message', this.onMessageReceived.bind(this));
   }
 
@@ -35,12 +35,16 @@ class Master {
     }
   }
 
-  onClientConnected() {
+  onWorkerConnected(ws) {
     console.log('Worker connected');
+
+    ws.on('message', (data) => {
+      this.onMessageReceived(ws, data);
+    });
   }
 
-  onMessageReceived(data) {
-    console.log('Message received from worker', data);
+  onMessageReceived(ws, data) {
+    console.log('Message received from worker', ws, data);
   }
 }
 
