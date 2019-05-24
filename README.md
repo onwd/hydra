@@ -4,7 +4,7 @@ Hydra is a distributed computing framework for Node.js. It provides a way to dis
 
 ## Concept
 
-Hydra provides `5` classes:
+Hydra provides the following entities:
   - **Master**:
     - stores `Tasks` definitions as well as algorithm to generate their `Space` and `Subspaces`;
     - handles incoming connections from `Workers` and stores their current work state;
