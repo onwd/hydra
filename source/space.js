@@ -5,3 +5,5 @@ class Space {
     this.getNextValue = options.getNextValue || null;
   }
 }
+
+module.exports = Space;

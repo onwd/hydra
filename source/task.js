@@ -5,3 +5,5 @@ class Task {
     this.space = options.space || null;
   }
 }
+
+module.exports = Task;
