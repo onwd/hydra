@@ -1,6 +1,6 @@
 import { Space, Task } from '../../../source/index';
 
-function f(x) {
+function f(x: number): boolean {
   return x * x === 64;
 }
 

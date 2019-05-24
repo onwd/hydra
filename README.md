@@ -19,7 +19,7 @@ $ npm i @onwd/hydra
 
 import { Space, Task } from '@onwd/hydra';
 
-function f(x) {
+function f(x: number): boolean {
   return x * x === 64;
 }
 
