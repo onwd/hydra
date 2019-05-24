@@ -25,5 +25,5 @@ Hydra provides the following entities:
     - stores `dependencies`, `f(x)` and a `Space`.
   - **Space**:
     - stores `type` of the `Space`, `values` array or a value generator function.
-  - **Space**:
+  - **Subspace**:
     - stores the chunk of `Space`'s `values`.
