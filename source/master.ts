@@ -1,12 +1,12 @@
-import * as WebSocket from 'ws';
 import Task from './task';
+import { Server } from 'ws';
 
 export default class Master {
   public port: number;
   public tasks: Array<Task>;
-  public wss: any;
+  public wss: Server;
 
-  constructor(options) {
+  constructor(options: any) {
     this.port = options.port || 9000;
     this.tasks = options.tasks || [];
     this.wss = null;
@@ -25,7 +25,7 @@ export default class Master {
       return;
     }
 
-    this.wss = new WebSocket.Server({
+    this.wss = new Server({
       port: this.port
     });
 
@@ -40,7 +40,7 @@ export default class Master {
     }
   }
 
-  private onWorkerConnected(ws) {
+  private onWorkerConnected(ws: any) {
     console.log('Worker connected');
 
     ws.on('message', (data) => {
@@ -48,7 +48,7 @@ export default class Master {
     });
   }
 
-  private onMessageReceived(ws, data) {
+  private onMessageReceived(ws: any, data: any) {
     console.log('Message received from worker', ws, data);
   }
 }

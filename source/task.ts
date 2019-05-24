@@ -5,7 +5,7 @@ export default class Task {
   public compute: Function;
   public space: Space;
 
-  constructor(options) {
+  constructor(options: any) {
     this.dependencies = options.dependencies || [];
     this.compute = options.compute || null;
     this.space = options.space || null;

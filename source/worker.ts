@@ -4,7 +4,7 @@ export default class Worker {
   public url: string;
   public wss: any;
 
-  constructor(options) {
+  constructor(options: any) {
     this.url = options.url || 'wss://localhost:9000';
     this.wss = null;
   }
@@ -39,7 +39,7 @@ export default class Worker {
     console.log('Connected to master');
   }
 
-  private onMessageReceived(data) {
+  private onMessageReceived(data: any) {
     console.log('Received message from master', data);
   }
 }

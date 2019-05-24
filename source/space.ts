@@ -3,7 +3,7 @@ export default class Space {
   public values: Array<any>;
   public getNextValue: Function;
 
-  constructor(options) {
+  constructor(options: any) {
     this.type = options.type || 'array';
     this.values = options.values || [];
     this.getNextValue = options.getNextValue || null;
