@@ -36,11 +36,11 @@ class Master {
   }
 
   onClientConnected() {
-    console.log('Client connected');
+    console.log('Worker connected');
   }
 
   onMessageReceived(data) {
-    console.log('Message received', data);
+    console.log('Message received from worker', data);
   }
 }
 
