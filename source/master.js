@@ -8,6 +8,10 @@ class Master {
   }
 
   start() {
+    this.startServer();
+  }
+
+  startServer() {
     if (this.wss) {
       return;
     }
@@ -16,20 +20,27 @@ class Master {
       port: this.port
     });
 
-    this.wss.on('open', () => {
-      console.log('Client connected');
-    });
-
-    this.wss.on('message', (data) => {
-      console.log('Message received', data);
-    });
+    this.wss.on('open', this.onClientConnected.bind(this));
+    this.wss.on('message', this.onMessageReceived.bind(this));
   }
 
   stop() {
+    this.stopServer();
+  }
+
+  stopServer() {
     if (this.wss) {
       this.wss.close();
       this.wss = null;
     }
+  }
+
+  onClientConnected() {
+    console.log('Client connected');
+  }
+
+  onMessageReceived(data) {
+    console.log('Message received', data);
   }
 }
 
