@@ -1,4 +1,4 @@
-import * as WebSocket from 'ws';
+import { Server } from 'ws';
 export default class Master {
     constructor(options) {
         this.port = options.port || 9000;
@@ -15,7 +15,7 @@ export default class Master {
         if (this.wss) {
             return;
         }
-        this.wss = new WebSocket.Server({
+        this.wss = new Server({
             port: this.port
         });
         this.wss.on('connection', this.onWorkerConnected.bind(this));

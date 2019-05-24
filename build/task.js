@@ -1,7 +1,7 @@
 export default class Task {
     constructor(options) {
         this.dependencies = options.dependencies || [];
-        this.compute = options.compute || null;
+        this.f = options.f || null;
         this.space = options.space || null;
     }
 }
