@@ -8,6 +8,59 @@ Hydra is a distributed computing framework for Node.js. It provides a way to dis
 $ npm i @onwd/hydra
 ```
 
+## Usage
+
+### Master
+
+1. Create a task:
+
+```ts
+// master/tasks/example-task.ts
+
+import { Space, Task } from '@onwd/hydra';
+
+function f(x) {
+  return x * x === 64;
+}
+
+const space = new Space({
+  values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+});
+
+const task = new Task({ f, space });
+
+export default task;
+```
+
+2. Create `Master` instance and start the server.
+
+```ts
+// master/index.ts
+
+import exampleTask from './tasks/example-task';
+import { Master } from '@onwd/hydra';
+
+const master = new Master({
+  tasks: [exampleTask]
+});
+
+master.start();
+```
+
+### Worker
+
+Create `Worker` instance and connect to `Master`.
+
+```ts
+import { Worker } from '@onwd/hydra';
+
+const worker = new Worker({
+  url: 'wss://localhost:9000'
+});
+
+worker.start();
+```
+
 ## Concept
 
 Hydra provides the following entities:
