@@ -1,9 +1,11 @@
-class Space {
+export default class Space {
+  public type: string;
+  public values: Array<any>;
+  public getNextValue: Function;
+
   constructor(options) {
     this.type = options.type || 'array';
     this.values = options.values || [];
     this.getNextValue = options.getNextValue || null;
   }
 }
-
-module.exports = Space;

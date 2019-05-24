@@ -1,17 +1,26 @@
-const WebSocket = require('ws');
+import * as WebSocket from 'ws';
+import Task from './task';
 
-class Master {
+export default class Master {
+  public port: number;
+  public tasks: Array<Task>;
+  public wss: any;
+
   constructor(options) {
     this.port = options.port || 9000;
     this.tasks = options.tasks || [];
     this.wss = null;
   }
 
-  start() {
+  public start() {
     this.startServer();
   }
 
-  startServer() {
+  public stop() {
+    this.stopServer();
+  }
+
+  private startServer() {
     if (this.wss) {
       return;
     }
@@ -24,18 +33,14 @@ class Master {
     this.wss.on('message', this.onMessageReceived.bind(this));
   }
 
-  stop() {
-    this.stopServer();
-  }
-
-  stopServer() {
+  private stopServer() {
     if (this.wss) {
       this.wss.close();
       this.wss = null;
     }
   }
 
-  onWorkerConnected(ws) {
+  private onWorkerConnected(ws) {
     console.log('Worker connected');
 
     ws.on('message', (data) => {
@@ -43,9 +48,7 @@ class Master {
     });
   }
 
-  onMessageReceived(ws, data) {
+  private onMessageReceived(ws, data) {
     console.log('Message received from worker', ws, data);
   }
 }
-
-module.exports = Master;

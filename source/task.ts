@@ -1,9 +1,13 @@
-class Task {
+import Space from './space';
+
+export default class Task {
+  public dependencies: Array<string>;
+  public compute: Function;
+  public space: Space;
+
   constructor(options) {
     this.dependencies = options.dependencies || [];
     this.compute = options.compute || null;
     this.space = options.space || null;
   }
 }
-
-module.exports = Task;

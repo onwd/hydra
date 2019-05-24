@@ -1,20 +1,23 @@
-const WebSocket = require('ws');
+import * as WebSocket from 'ws';
 
-class Worker {
+export default class Worker {
+  public url: string;
+  public wss: any;
+
   constructor(options) {
     this.url = options.url || 'wss://localhost:9000';
     this.wss = null;
   }
 
-  start() {
+  public start() {
     this.connect();
   }
 
-  stop() {
+  public stop() {
     this.disconnect();
   }
 
-  connect() {
+  private connect() {
     if (this.wss) {
       return;
     }
@@ -25,20 +28,18 @@ class Worker {
     this.wss.on('message', this.onMessageReceived.bind(this));
   }
 
-  disconnect() {
+  private disconnect() {
     if (this.wss) {
       this.wss.close();
       this.wss = null;
     }
   }
 
-  onConnected() {
+  private onConnected() {
     console.log('Connected to master');
   }
 
-  onMessageReceived(data) {
+  private onMessageReceived(data) {
     console.log('Received message from master', data);
   }
 }
-
-module.exports = Worker;
