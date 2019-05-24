@@ -9,15 +9,15 @@ export default class Worker {
     this.wss = null;
   }
 
-  public start() {
+  public start(): void {
     this.connect();
   }
 
-  public stop() {
+  public stop(): void {
     this.disconnect();
   }
 
-  private connect() {
+  private connect(): void {
     if (this.wss) {
       return;
     }
@@ -28,14 +28,14 @@ export default class Worker {
     this.wss.on('message', this.onMessageReceived.bind(this));
   }
 
-  private disconnect() {
+  private disconnect(): void {
     if (this.wss) {
       this.wss.close();
       this.wss = null;
     }
   }
 
-  private onConnected() {
+  private onConnected(): void {
     console.log('Connected to master');
   }
 

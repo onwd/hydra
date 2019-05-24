@@ -12,15 +12,15 @@ export default class Master {
     this.wss = null;
   }
 
-  public start() {
+  public start(): void {
     this.startServer();
   }
 
-  public stop() {
+  public stop(): void {
     this.stopServer();
   }
 
-  private startServer() {
+  private startServer(): void {
     if (this.wss) {
       return;
     }
@@ -33,7 +33,7 @@ export default class Master {
     this.wss.on('message', this.onMessageReceived.bind(this));
   }
 
-  private stopServer() {
+  private stopServer(): void {
     if (this.wss) {
       this.wss.close();
       this.wss = null;
