@@ -1,6 +1,6 @@
 # Hydra
 
-Hydra is a distributed computing framework for Node.js. It provides a way to distribute calculation of some arbitrary function `f(x)` over arbitrary space `S` between many computation nodes (browsers or other Node.js processes).
+Hydra is a distributed computing framework for Node.js. It provides a way to distribute calculation of some arbitrary function `f(x)` over arbitrary space `S` between many computation nodes (browsers or other Node.js processes) connected to master node via websockets.
 
 ## Install
 
