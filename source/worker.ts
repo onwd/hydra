@@ -38,8 +38,6 @@ export default class Worker {
   }
 
   private onConnected(): void {
-    console.log('Connected to master');
-
     this.requestWork();
   }
 
@@ -54,8 +52,6 @@ export default class Worker {
   }
 
   private onMessageReceived(message: string): void {
-    console.log('Received message from master', message);
-
     const deserializedMessage = Message.deserialize(message);
 
     this.processMessage(deserializedMessage);

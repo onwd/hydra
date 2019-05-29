@@ -43,16 +43,12 @@ export default class Master {
   }
 
   private onWorkerConnected(ws: any) {
-    console.log('Worker connected');
-
     ws.on('message', (data) => {
       this.onMessageReceived(ws, data);
     });
   }
 
   private onMessageReceived(ws: any, message: string) {
-    console.log('Message received from worker', ws, message);
-
     const deserializedMessage = Message.deserialize(message);
 
     this.processMessage(deserializedMessage);
