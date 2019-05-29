@@ -2,10 +2,7 @@
   "name": "@onwd/hydra",
   "version": "0.0.0",
   "description": "Distributed computing for Node.js.",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
+  "main": "build/index.js",
   "scripts": {
     "build": "npm run build-example && npm run build-source",
     "build-example": "tsc --p ./example",
