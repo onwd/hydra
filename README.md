@@ -67,7 +67,7 @@ Hydra provides the following entities:
   - **Master**:
     - stores `Tasks` definitions as well as algorithms to generate their `Space` and sub-`Spaces`;
     - handles incoming connections from `Workers` and stores their current work state;
-    - provides the `Tasks` definitions to `Workers` as well as sub-`Space` they should work on;
+    - provides the `Tasks` definitions to `Workers` as well as sub-`Spaces` they should work on;
     - stores the `Tasks` completion state.
   - **Worker**:
     - connects to `Master` and requests a `Task` definition and a sub-`Space` to work on;
