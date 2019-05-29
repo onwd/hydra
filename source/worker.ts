@@ -7,7 +7,7 @@ export default class Worker {
   public wss: any;
 
   constructor(options: any) {
-    this.url = options.url || 'wss://localhost:9000';
+    this.url = options.url || 'ws://localhost:9000';
     this.wss = null;
   }
 

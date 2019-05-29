@@ -55,7 +55,7 @@ Create `Worker` instance and connect to `Master`.
 import { Worker } from '@onwd/hydra';
 
 const worker = new Worker({
-  url: 'wss://localhost:9000'
+  url: 'ws://localhost:9000'
 });
 
 worker.start();
