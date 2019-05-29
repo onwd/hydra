@@ -1,4 +1,5 @@
 import * as WebSocket from 'ws';
+import Message from './message';
 
 export default class Worker {
   public url: string;
@@ -37,9 +38,23 @@ export default class Worker {
 
   private onConnected(): void {
     console.log('Connected to master');
+
+    this.requestWork();
   }
 
-  private onMessageReceived(data: any) {
-    console.log('Received message from master', data);
+  private requestWork(): void {
+    this.sendMessage('work-request');
+  }
+
+  private sendMessage(event: string, data?: any): void {
+    const message = new Message({ event, data });
+
+    this.wss.send(message.serialize());
+  }
+
+  private onMessageReceived(message: string): void {
+    console.log('Received message from master', message);
+
+    const deserializedMessage = Message.deserialize(message);
   }
 }
