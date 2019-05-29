@@ -6,7 +6,7 @@ var ws_1 = require("ws");
 var Master = /** @class */ (function () {
     function Master(options) {
         this.port = options.port || 9000;
-        this.tasks = options.tasks || [];
+        this.task = options.task || null;
         this.wss = null;
     }
     Master.prototype.start = function () {

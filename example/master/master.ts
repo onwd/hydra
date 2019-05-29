@@ -1,6 +1,6 @@
 import { Master } from '../../source/index';
-import * as tasks from './tasks/index';
+import task from './tasks/example-task';
 
-const master = new Master({ tasks });
+const master = new Master({ task });
 
 master.start();

@@ -41,7 +41,7 @@ import exampleTask from './tasks/example-task';
 import { Master } from '@onwd/hydra';
 
 const master = new Master({
-  tasks: [exampleTask]
+  task: exampleTask
 });
 
 master.start();
@@ -65,10 +65,10 @@ worker.start();
 
 Hydra provides the following entities:
   - **Master**:
-    - stores `Tasks` definitions as well as algorithms to generate their `Space` and sub-`Spaces`;
+    - stores `Task` definition as well as algorithm to generate `Space` and sub-`Spaces`;
     - handles incoming connections from `Workers` and stores their current work state;
-    - provides the `Tasks` definitions to `Workers` as well as sub-`Spaces` they should work on;
-    - stores the `Tasks` completion state.
+    - provides the `Task` definition to `Workers` as well as sub-`Spaces` they should work on;
+    - stores the `Task` completion state.
   - **Worker**:
     - connects to `Master` and requests a `Task` definition and a sub-`Space` to work on;
     - installs dependencies listed in a `Task`;

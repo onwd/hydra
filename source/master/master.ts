@@ -5,12 +5,12 @@ import { Server } from 'ws';
 
 export default class Master {
   public port: number;
-  public tasks: Array<Task>;
+  public task: Task;
   public wss: Server;
 
   constructor(options: any) {
     this.port = options.port || 9000;
-    this.tasks = options.tasks || [];
+    this.task = options.task || null;
     this.wss = null;
   }
 
