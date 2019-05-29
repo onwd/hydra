@@ -42,13 +42,13 @@ export default class Master {
     }
   }
 
-  private onWorkerConnected(ws: any) {
+  private onWorkerConnected(ws: any): void {
     ws.on('message', (data) => {
       this.onMessageReceived(ws, data);
     });
   }
 
-  private onMessageReceived(ws: any, message: string) {
+  private onMessageReceived(ws: any, message: string): void {
     const deserializedMessage = Message.deserialize(message);
 
     this.processMessage(deserializedMessage);

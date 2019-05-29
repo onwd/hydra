@@ -1,4 +1,4 @@
-const onWorkReceived = (data: any) => {
+const onWorkReceived = (data: any): void => {
 
 };
 

@@ -1,4 +1,4 @@
-const onWorkRequested = () => {
+const onWorkRequested = (): void => {
 
 };
 
