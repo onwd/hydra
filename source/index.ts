@@ -1,7 +1,7 @@
-import Master from './master';
-import Space from './space';
-import Task from './task';
-import Worker from './worker';
+import Master from './master/master';
+import Space from './core/space';
+import Task from './core/task';
+import Worker from './worker/worker';
 
 export {
   Master,

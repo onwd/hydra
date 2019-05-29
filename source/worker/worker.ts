@@ -1,6 +1,6 @@
 import * as WebSocket from 'ws';
-import Message from './message';
-import workerEvents from './worker-events';
+import events from './events';
+import Message from '../core/message';
 
 export default class Worker {
   public url: string;
@@ -58,6 +58,6 @@ export default class Worker {
   }
 
   private processMessage(message: Message): void {
-    workerEvents[message.event](message.data);
+    events[message.event](message.data);
   }
 }

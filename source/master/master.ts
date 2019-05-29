@@ -1,6 +1,6 @@
-import masterEvents from './master-events';
-import Message from './message';
-import Task from './task';
+import events from './events';
+import Message from '../core/message';
+import Task from '../core/task';
 import { Server } from 'ws';
 
 export default class Master {
@@ -55,6 +55,6 @@ export default class Master {
   }
 
   private processMessage(message: Message): void {
-    masterEvents[message.event](message.data);
+    events[message.event](message.data);
   }
 }
