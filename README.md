@@ -37,12 +37,10 @@ export default task;
 ```ts
 // master/index.ts
 
-import exampleTask from './tasks/example-task';
 import { Master } from '@onwd/hydra';
+import task from './tasks/example-task';
 
-const master = new Master({
-  task: exampleTask
-});
+const master = new Master({ task });
 
 master.start();
 ```
