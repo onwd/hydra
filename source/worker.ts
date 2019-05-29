@@ -56,5 +56,11 @@ export default class Worker {
     console.log('Received message from master', message);
 
     const deserializedMessage = Message.deserialize(message);
+
+    this.processMessage(deserializedMessage);
+  }
+
+  private processMessage(message: Message): void {
+
   }
 }
