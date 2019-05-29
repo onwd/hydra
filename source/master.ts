@@ -1,3 +1,5 @@
+import masterEvents from './master-events';
+import Message from './message';
 import Task from './task';
 import { Server } from 'ws';
 
@@ -48,7 +50,15 @@ export default class Master {
     });
   }
 
-  private onMessageReceived(ws: any, data: any) {
-    console.log('Message received from worker', ws, data);
+  private onMessageReceived(ws: any, message: string) {
+    console.log('Message received from worker', ws, message);
+
+    const deserializedMessage = Message.deserialize(message);
+
+    this.processMessage(deserializedMessage);
+  }
+
+  private processMessage(message: Message): void {
+    masterEvents[message.event](message.data);
   }
 }
