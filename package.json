@@ -6,8 +6,7 @@
   "scripts": {
     "build": "npm run build-example && npm run build-source",
     "build-example": "tsc --p ./example",
-    "build-source": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-source": "tsc"
   },
   "repository": {
     "type": "git",
