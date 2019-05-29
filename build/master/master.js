@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var master_events_1 = require("./master-events");
-var message_1 = require("./message");
+var events_1 = require("./events");
+var message_1 = require("../core/message");
 var ws_1 = require("ws");
 var Master = /** @class */ (function () {
     function Master(options) {
@@ -42,7 +42,7 @@ var Master = /** @class */ (function () {
         this.processMessage(deserializedMessage);
     };
     Master.prototype.processMessage = function (message) {
-        master_events_1.default[message.event](message.data);
+        events_1.default[message.event](message.data);
     };
     return Master;
 }());

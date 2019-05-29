@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var WebSocket = require("ws");
-var message_1 = require("./message");
-var worker_events_1 = require("./worker-events");
+var events_1 = require("./events");
+var message_1 = require("../core/message");
 var Worker = /** @class */ (function () {
     function Worker(options) {
         this.url = options.url || 'ws://localhost:9000';
@@ -43,7 +43,7 @@ var Worker = /** @class */ (function () {
         this.processMessage(deserializedMessage);
     };
     Worker.prototype.processMessage = function (message) {
-        worker_events_1.default[message.event](message.data);
+        events_1.default[message.event](message.data);
     };
     return Worker;
 }());
