@@ -1,5 +1,10 @@
-import Master from './master';
-import Space from './space';
-import Task from './task';
-import Worker from './worker';
-export { Master, Space, Task, Worker };
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var master_1 = require("./master");
+exports.Master = master_1.default;
+var space_1 = require("./space");
+exports.Space = space_1.default;
+var task_1 = require("./task");
+exports.Task = task_1.default;
+var worker_1 = require("./worker");
+exports.Worker = worker_1.default;
