@@ -1,0 +1,9 @@
+.github
+example
+node_modules
+source
+
+.editorconfig
+.gitignore
+.travis.yml
+tsconfig.json
