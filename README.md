@@ -65,18 +65,16 @@ worker.start();
 
 Hydra provides the following entities:
   - **Master**:
-    - stores `Tasks` definitions as well as algorithm to generate their `Space` and `Subspaces`;
+    - stores `Tasks` definitions as well as algorithms to generate their `Space` and sub-`Spaces`;
     - handles incoming connections from `Workers` and stores their current work state;
-    - provides the `Tasks` definitions to `Workers` as well as `Subspace` they should work on;
+    - provides the `Tasks` definitions to `Workers` as well as sub-`Space` they should work on;
     - stores the `Tasks` completion state.
   - **Worker**:
-    - connects to `Master` and requests a `Task` definition and a `Subspace` to work on;
+    - connects to `Master` and requests a `Task` definition and a sub-`Space` to work on;
     - installs dependencies listed in a `Task`;
-    - works on a `Task` using provided definition and a `Subspace`;
+    - works on a `Task` using provided definition and a sub-`Space`;
     - responds to `Master` with calculation result.
   - **Task**:
     - stores `dependencies`, `f(x)` and a `Space`.
   - **Space**:
     - stores `type` of the `Space`, `values` array or a value generator function.
-  - **Subspace**:
-    - stores the chunk of `Space`'s `values`.
