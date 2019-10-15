@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/onwd/hydra#readme",
   "dependencies": {
-    "ws": "^7.1.1"
+    "ws": "^7.1.2"
   },
   "devDependencies": {
-    "@types/node": "^12.6.9",
-    "@types/ws": "^6.0.1",
-    "typescript": "^3.5.3"
+    "@types/node": "^12.7.12",
+    "@types/ws": "^6.0.3",
+    "typescript": "^3.6.4"
   }
 }
