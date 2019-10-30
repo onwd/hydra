@@ -1,0 +1,20 @@
+{
+  "name": "hydra-worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/index.html",
+  "scripts": {
+    "start": "nw"
+  },
+  "author": "onwd",
+  "license": "MIT",
+  "dependencies": {
+    "nw": "^0.42.1"
+  },
+  "window": {
+    "width": 250,
+    "height": 100,
+    "transparent": true,
+    "frame": false
+  }
+}

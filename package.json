@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm run build-example && npm run build-source",
     "build-example": "tsc --p ./example",
-    "build-source": "tsc"
+    "build-source": "tsc",
+    "worker": "cd source/worker && npm start"
   },
   "repository": {
     "type": "git",

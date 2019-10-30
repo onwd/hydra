@@ -1,0 +1,56 @@
+html {
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.app {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.status {
+  position: relative;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.status:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #333;
+  transition: all 0.3s;
+}
+
+.status-locating:after {
+  background: #e2be32;
+}
+
+.status-failedtolocate:after {
+  background: #c80003;
+}
+
+.status-connecting:after {
+  background: #f5c900;
+}
+
+.status-connected:after {
+  background: #00a900;
+}
+
+.status-failedtoconnect:after {
+  background: #c80003;
+}
+
+.progress {
+  color: #999;
+  font-size: 12px;
+}
