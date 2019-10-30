@@ -1,4 +1,4 @@
-import { Space, Task } from '../../../source/index';
+import { Space, Task } from '../../../source/framework';
 
 function f(x: number): boolean {
   return x * x === 64;
