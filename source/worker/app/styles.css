@@ -46,7 +46,7 @@ html {
   background: #00a900;
 }
 
-.status-failedtoconnect:after {
+.status-noconnection:after {
   background: #c80003;
 }
 
