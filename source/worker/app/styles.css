@@ -31,7 +31,7 @@ html {
 }
 
 .status-locating:after {
-  background: #e2be32;
+  background: #f5c900;
 }
 
 .status-failedtolocate:after {
