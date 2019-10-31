@@ -77,8 +77,8 @@
   }
 
   function onConnectionClosed() {
-    setStatus(statusEnum.NO_CONNECTION);
     disconnect();
+    setStatus(statusEnum.NO_CONNECTION);
     setTimeout(locate, 3000);
   }
 
