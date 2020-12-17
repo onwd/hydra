@@ -5,7 +5,7 @@ Hydra is a distributed computing framework for Node.js. It provides a way to dis
 ## Install
 
 ```bash
-$ npm i @onwd/hydra
+$ yarn add @onwd/hydra
 ```
 
 ## Usage

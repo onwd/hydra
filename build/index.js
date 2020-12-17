@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Worker = exports.Task = exports.Space = exports.Master = void 0;
 var master_1 = require("./master/master");
 exports.Master = master_1.default;
 var space_1 = require("./core/space");

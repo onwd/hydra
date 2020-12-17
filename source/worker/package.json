@@ -9,7 +9,7 @@
   "author": "onwd",
   "license": "MIT",
   "dependencies": {
-    "nw": "^0.42.1"
+    "nw": "^0.50.2"
   },
   "window": {
     "width": 250,

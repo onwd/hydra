@@ -4,10 +4,10 @@
   "description": "Distributed computing for Node.js.",
   "main": "build/index.js",
   "scripts": {
-    "build": "npm run build-example && npm run build-source",
+    "build": "yarn run build-example && yarn run build-source",
     "build-example": "tsc --p ./example",
     "build-source": "tsc",
-    "worker": "cd source/worker && npm start"
+    "worker": "cd source/worker && yarn start"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/onwd/hydra#readme",
   "dependencies": {
-    "ws": "^7.1.2"
+    "ws": "^7.4.1"
   },
   "devDependencies": {
-    "@types/node": "^12.7.12",
-    "@types/ws": "^6.0.3",
-    "typescript": "^3.6.4"
+    "@types/node": "^14.14.14",
+    "@types/ws": "^7.4.0",
+    "typescript": "^4.1.3"
   }
 }
