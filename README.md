@@ -67,10 +67,9 @@ Hydra provides the following entities:
     - stores the `Task` completion state.
   - **Worker**:
     - connects to `Master` and requests a `Task` definition and a sub-`Space` to work on;
-    - installs dependencies listed in a `Task`;
     - works on a `Task` using provided definition and a sub-`Space`;
     - responds to `Master` with calculation result.
   - **Task**:
-    - stores `dependencies`, `f(x)` and a `Space`.
+    - stores `f(x)` and a `Space`.
   - **Space**:
     - stores `type` of the `Space`, `values` array or a value generator function.
