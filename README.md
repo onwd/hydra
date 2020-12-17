@@ -27,9 +27,7 @@ const space = new Space({
   values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 });
 
-const task = new Task({ f, space });
-
-export default task;
+export const task = new Task({ f, space });
 ```
 
 2. Create `Master` instance and start the server.
@@ -38,7 +36,7 @@ export default task;
 // master/index.ts
 
 import { Master } from '@onwd/hydra';
-import task from './tasks/example-task';
+import { task } from './tasks/example-task';
 
 const master = new Master({ task });
 
