@@ -8,13 +8,9 @@
   };
 
   const statusElem = document.getElementsByClassName('status')[0];
-  const progressElem = document.getElementsByClassName('progress')[0];
 
   let wss = null;
   let masterUrl = 'ws://localhost:9000';
-
-  // setStatus(statusEnum.CONNECTED);
-  // setProgress('Solved 1 chunks');
 
   locate();
 
@@ -35,10 +31,6 @@
 
     statusElem.innerText = statusToText[status];
     statusElem.className = `status ${statusToClass[status]}`;
-  }
-
-  function setProgress(progress) {
-    progressElem.innerText = progress;
   }
 
   function locate() {
