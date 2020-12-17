@@ -1,11 +1,4 @@
-import Master from './master/master';
-import Space from './core/space';
-import Task from './core/task';
-import Worker from './worker/worker';
-
-export {
-  Master,
-  Space,
-  Task,
-  Worker
-};
+export * from './core/space';
+export * from './core/task';
+export * from './master/master';
+export * from './worker/worker';

@@ -1,14 +1,14 @@
 import * as WebSocket from 'ws';
-import events from './events';
-import Message from '../core/message';
+import { Message } from '../core/message';
+import { events } from './events';
 
-export default class Worker {
+export class Worker {
   public url: string;
   public wss: any;
 
-  constructor(options: any) {
-    this.url = options.url || 'ws://localhost:9000';
-    this.wss = null;
+  constructor(worker?: Partial<Worker>) {
+    this.url = worker?.url ?? 'ws://localhost:9000';
+    this.wss = worker?.wss ?? null;
   }
 
   public start(): void {
@@ -20,14 +20,12 @@ export default class Worker {
   }
 
   private connect(): void {
-    if (this.wss) {
-      return;
+    if (!this.wss) {
+      this.wss = new WebSocket(this.url);
+
+      this.wss.on('open', this.onConnected.bind(this));
+      this.wss.on('message', this.onMessageReceived.bind(this));
     }
-
-    this.wss = new WebSocket(this.url);
-
-    this.wss.on('open', this.onConnected.bind(this));
-    this.wss.on('message', this.onMessageReceived.bind(this));
   }
 
   private disconnect(): void {

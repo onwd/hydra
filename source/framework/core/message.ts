@@ -1,10 +1,10 @@
-export default class Message {
+export class Message {
   public event: string;
   public data?: any;
 
-  constructor(message: any) {
-    this.event = message.event || '';
-    this.data = message.data || null;
+  constructor(message?: Partial<Message>) {
+    this.event = message?.event ?? '';
+    this.data = message?.data ?? null;
   }
 
   static deserialize(message: string): Message {

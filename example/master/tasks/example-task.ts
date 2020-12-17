@@ -8,6 +8,4 @@ const space = new Space({
   values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 });
 
-const task = new Task({ f, space });
-
-export default task;
+export const task = new Task({ f, space });

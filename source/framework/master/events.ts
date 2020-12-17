@@ -2,6 +2,6 @@ const onWorkRequested = (): void => {
 
 };
 
-export default {
+export const events = {
   'work-request': onWorkRequested
 };

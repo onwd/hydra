@@ -2,6 +2,6 @@ const onWorkReceived = (data: any): void => {
 
 };
 
-export default {
+export const events = {
   'work': onWorkReceived
 };
