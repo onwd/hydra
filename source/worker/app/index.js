@@ -10,7 +10,7 @@
   const statusElem = document.getElementsByClassName('status')[0];
 
   let wss = null;
-  let masterUrl = 'ws://localhost:9000';
+  let masterUrl;
 
   locate();
 
@@ -35,7 +35,26 @@
 
   function locate() {
     setStatus(statusEnum.LOCATING);
-    setTimeout(connect, 3000);
+
+    const script = document.createElement('script');
+
+    script.src = 'https://onwd.github.io/hydra/configuration.js';
+
+    script.onload = () => {
+      document.body.removeChild(script);
+
+      masterUrl = window.hydraConfiguration.masterUrl;
+      delete window.hydraConfiguration;
+
+      connect();
+    };
+
+    script.onerror = () => {
+      document.body.removeChild(script);
+      onLocationFailed();
+    };
+
+    document.body.appendChild(script);
   }
 
   function onLocationFailed() {
