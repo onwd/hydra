@@ -73,9 +73,7 @@
           url: masterUrl
         }),
         onConnected: onConnected,
-        onConnectionClosed: onConnectionClosed,
-        onMessageReceived: onMessageReceived,
-        onError: onError
+        onConnectionClosed: onConnectionClosed
       });
 
       worker.start();
@@ -97,13 +95,5 @@
     disconnect();
     setStatus(statusEnum.NO_CONNECTION);
     setTimeout(locate, 3000);
-  }
-
-  function onMessageReceived() {
-
-  }
-
-  function onError() {
-
   }
 })();
