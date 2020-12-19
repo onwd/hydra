@@ -74,7 +74,8 @@
         }),
         onConnected: onConnected,
         onConnectionClosed: onConnectionClosed,
-        onMessageReceived: onMessageReceived
+        onMessageReceived: onMessageReceived,
+        onError: onError
       });
     }
   }
@@ -91,6 +92,12 @@
   }
 
   function onConnectionClosed() {
+    disconnect();
+    setStatus(statusEnum.NO_CONNECTION);
+    setTimeout(locate, 3000);
+  }
+
+  function onError() {
     disconnect();
     setStatus(statusEnum.NO_CONNECTION);
     setTimeout(locate, 3000);

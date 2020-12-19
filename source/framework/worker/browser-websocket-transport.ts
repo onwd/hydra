@@ -19,6 +19,7 @@ export class BrowserWebsocketTransport extends Transport {
       this.ws.onopen = this.handleConnected.bind(this);
       this.ws.onclose = this.handleConnectionClosed.bind(this);
       this.ws.onmessage = this.handleMessageReceived.bind(this);
+      this.ws.onerror = this.handleError.bind(this);
     }
   }
 
