@@ -18,6 +18,7 @@ export class NodeWebsocketTransport extends Transport {
       this.ws = new WebSocket(this.url);
 
       this.ws.on('open', this.handleConnected.bind(this));
+      this.ws.on('close', this.handleConnectionClosed.bind(this));
       this.ws.on('message', this.handleMessageReceived.bind(this));
     }
   }

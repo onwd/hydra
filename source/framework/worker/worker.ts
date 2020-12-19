@@ -5,16 +5,19 @@ import { Transport } from './transport';
 export class Worker {
   public transport: Transport;
   public onConnected: () => any;
+  public onConnectionClosed: () => any;
   public onMessageReceived: (message: Message) => any;
 
   constructor(worker?: Partial<Worker>) {
     this.transport = worker?.transport ?? null;
     this.onConnected = worker?.onConnected ?? (() => undefined);
+    this.onConnectionClosed = worker?.onConnectionClosed ?? (() => undefined);
     this.onMessageReceived = worker?.onMessageReceived ?? (() => undefined);
   }
 
   public start(): void {
     this.transport.onConnected = this.handleConnected.bind(this);
+    this.transport.onConnectionClosed = this.handleConnectionClosed.bind(this);
     this.transport.onMessageReceived = this.handleMessageReceived.bind(this);
 
     this.transport.connect();
@@ -31,6 +34,10 @@ export class Worker {
   private handleConnected(): void {
     this.onConnected();
     this.requestWork();
+  }
+
+  private handleConnectionClosed(): void {
+    this.onConnectionClosed();
   }
 
   private handleMessageReceived(message: Message): void {

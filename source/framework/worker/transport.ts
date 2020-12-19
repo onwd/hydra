@@ -2,10 +2,12 @@ import { Message } from '../core/message';
 
 export abstract class Transport {
   public onConnected: () => any;
+  public onConnectionClosed: () => any;
   public onMessageReceived: (message: Message) => any;
 
   constructor(transport?: Partial<Transport>) {
     this.onConnected = transport?.onConnected ?? (() => undefined);
+    this.onConnectionClosed = transport?.onConnectionClosed ?? (() => undefined);
     this.onMessageReceived = transport?.onMessageReceived ?? (() => undefined);
   }
 
@@ -15,6 +17,10 @@ export abstract class Transport {
 
   protected handleConnected(): void {
     this.onConnected();
+  }
+
+  protected handleConnectionClosed(): void {
+    this.onConnectionClosed();
   }
 
   protected handleMessageReceived(message: string): void {
