@@ -1,6 +1,6 @@
 {
   "name": "hydra-framework",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Distributed computing for Node.js.",
   "main": "build/index.js",
   "scripts": {
