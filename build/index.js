@@ -13,4 +13,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./core/space"), exports);
 __exportStar(require("./core/task"), exports);
 __exportStar(require("./master/master"), exports);
+__exportStar(require("./worker/browser-websocket-transport"), exports);
+__exportStar(require("./worker/node-websocket-transport"), exports);
 __exportStar(require("./worker/worker"), exports);
