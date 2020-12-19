@@ -9,8 +9,8 @@
 
   const statusElem = document.getElementsByClassName('status')[0];
 
-  let wss = null;
-  let masterUrl;
+  let worker = null;
+  let masterUrl = null;
 
   locate();
 
@@ -63,23 +63,24 @@
   }
 
   function connect() {
-    if (wss) {
-      return;
+    if (!worker) {
+      setStatus(statusEnum.CONNECTING);
+
+      worker = new Worker({
+        transport: new BrowserWebsocketTransport({
+          url: masterUrl
+        }),
+        onConnected: onConnected,
+        onConnectionClosed: onConnectionClosed,
+        onMessageReceived: onMessageReceived
+      });
     }
-
-    setStatus(statusEnum.CONNECTING);
-
-    wss = new WebSocket(masterUrl);
-
-    wss.onopen = onConnected;
-    wss.onclose = onConnectionClosed;
-    wss.onmessage = onMessageReceived;
   }
 
   function disconnect() {
-    if (wss) {
-      wss.close();
-      wss = null;
+    if (worker) {
+      worker.stop();
+      worker = null;
     }
   }
 
