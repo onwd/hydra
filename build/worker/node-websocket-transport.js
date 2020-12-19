@@ -32,6 +32,7 @@ var NodeWebsocketTransport = /** @class */ (function (_super) {
             this.ws.on('open', this.handleConnected.bind(this));
             this.ws.on('close', this.handleConnectionClosed.bind(this));
             this.ws.on('message', this.handleMessageReceived.bind(this));
+            this.ws.on('error', this.handleError.bind(this));
         }
     };
     NodeWebsocketTransport.prototype.disconnect = function () {
