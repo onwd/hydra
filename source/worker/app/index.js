@@ -77,6 +77,8 @@
         onMessageReceived: onMessageReceived,
         onError: onError
       });
+
+      worker.start();
     }
   }
 
@@ -97,13 +99,11 @@
     setTimeout(locate, 3000);
   }
 
-  function onError() {
-    disconnect();
-    setStatus(statusEnum.NO_CONNECTION);
-    setTimeout(locate, 3000);
+  function onMessageReceived() {
+
   }
 
-  function onMessageReceived() {
+  function onError() {
 
   }
 })();
