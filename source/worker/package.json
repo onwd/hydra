@@ -9,7 +9,7 @@
   "author": "onwd",
   "license": "MIT",
   "dependencies": {
-    "@onwd/hydra": "^0.0.2",
+    "hydra-framework": "^0.0.1",
     "nw": "^0.50.2"
   },
   "window": {

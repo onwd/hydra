@@ -5,7 +5,7 @@ Hydra is a distributed computing framework for Node.js. It provides a way to dis
 ## Install
 
 ```bash
-$ yarn add @onwd/hydra
+$ yarn add hydra-framework
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ $ yarn add @onwd/hydra
 ```ts
 // master/tasks/example-task.ts
 
-import { Space, Task } from '@onwd/hydra';
+import { Space, Task } from 'hydra-framework';
 
 function f(x: number): boolean {
   return x * x === 64;
@@ -35,7 +35,7 @@ export const task = new Task({ f, space });
 ```ts
 // master/index.ts
 
-import { Master } from '@onwd/hydra';
+import { Master } from 'hydra-framework';
 import { task } from './tasks/example-task';
 
 const master = new Master({ task });
@@ -48,7 +48,7 @@ master.start();
 Create `Worker` instance and connect to `Master`.
 
 ```ts
-import { NodeWebsocketTransport, Worker } from '@onwd/hydra';
+import { NodeWebsocketTransport, Worker } from 'hydra-framework';
 
 const worker = new Worker({
   transport: new NodeWebsocketTransport({
