@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@onwd/hydra@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@onwd/hydra/-/hydra-0.0.2.tgz#c9d324c00056c30edc9fd29e324efba295190060"
-  integrity sha512-0ZMAVwTpo8gw0lh/TU9d4PAOskyDuwd8yV18PUV2ElPRMuM1AO+hLQeEij+TUjISW11ClosOjMH8LrWU60l/Rg==
-  dependencies:
-    ws "^7.4.1"
-
 ansi-regex@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
@@ -362,6 +355,13 @@ has-to-string-tag-x@^1.2.0:
   integrity sha512-vdbKfmw+3LoOYVr+mtxHaX5a96+0f3DljYd8JOqvOLsf5mw2Otda2qCDT9qRqLAhrjyQ0h7ual5nOiASpsGNFw==
   dependencies:
     has-symbol-support-x "^1.4.1"
+
+hydra-framework@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/hydra-framework/-/hydra-framework-0.0.2.tgz#9e7c32d4dd0566beebb6f079f80ed1a579a6ee8b"
+  integrity sha512-Y3Si27/tGdcBP3f/6MkXNeN4T6n57A36mot1H2JKomntjX7gVUdUhJA0IPocrLuy/kY7HXurgU5VYE8PWFqk6A==
+  dependencies:
+    ws "^7.4.1"
 
 ieee754@^1.1.13:
   version "1.2.1"

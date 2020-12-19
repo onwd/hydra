@@ -1,4 +1,6 @@
 (() => {
+  const { BrowserWebsocketTransport, Worker } = require('../../../build');
+
   const statusEnum = {
     LOCATING:         1,
     FAILED_TO_LOCATE: 2,
