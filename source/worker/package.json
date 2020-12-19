@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "hydra-framework": "^0.0.3",
-    "nw": "^0.50.2"
+    "nw": "^0.50.2-sdk"
   },
   "window": {
     "width": 250,
