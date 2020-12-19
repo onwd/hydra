@@ -4,14 +4,18 @@ import { Transport } from './transport';
 
 export class Worker {
   public transport: Transport;
+  public onConnected: () => any;
+  public onMessageReceived: (message: Message) => any;
 
   constructor(worker?: Partial<Worker>) {
     this.transport = worker?.transport ?? null;
+    this.onConnected = worker?.onConnected ?? (() => undefined);
+    this.onMessageReceived = worker?.onMessageReceived ?? (() => undefined);
   }
 
   public start(): void {
-    this.transport.onConnected = this.onConnected.bind(this);
-    this.transport.onMessageReceived = this.onMessageReceived.bind(this);
+    this.transport.onConnected = this.handleConnected.bind(this);
+    this.transport.onMessageReceived = this.handleMessageReceived.bind(this);
 
     this.transport.connect();
   }
@@ -24,11 +28,13 @@ export class Worker {
     this.transport.send(event, data);
   }
 
-  private onConnected(): void {
+  private handleConnected(): void {
+    this.onConnected();
     this.requestWork();
   }
 
-  private onMessageReceived(message: Message): void {
+  private handleMessageReceived(message: Message): void {
+    this.onMessageReceived(message);
     this.processMessage(message);
   }
 
