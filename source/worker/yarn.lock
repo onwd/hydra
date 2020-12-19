@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@onwd/hydra@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@onwd/hydra/-/hydra-0.0.2.tgz#c9d324c00056c30edc9fd29e324efba295190060"
+  integrity sha512-0ZMAVwTpo8gw0lh/TU9d4PAOskyDuwd8yV18PUV2ElPRMuM1AO+hLQeEij+TUjISW11ClosOjMH8LrWU60l/Rg==
+  dependencies:
+    ws "^7.4.1"
+
 ansi-regex@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
@@ -744,6 +751,11 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
+
+ws@^7.4.1:
+  version "7.4.1"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.1.tgz#a333be02696bd0e54cea0434e21dcc8a9ac294bb"
+  integrity sha512-pTsP8UAfhy3sk1lSk/O/s4tjD0CRwvMnzvwr4OKGX7ZvqZtUyx4KIJB5JWbkykPoc55tixMGgTNoh3k4FkNGFQ==
 
 xtend@^4.0.0:
   version "4.0.2"
