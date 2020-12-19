@@ -1,7 +1,9 @@
-import { Worker } from '../../source/framework';
+import { NodeWebsocketTransport, Worker } from '../../source/framework';
 
 const worker = new Worker({
-  url: 'ws://localhost:9000'
+  transport: new NodeWebsocketTransport({
+    url: 'ws://localhost:9000'
+  })
 });
 
 worker.start();

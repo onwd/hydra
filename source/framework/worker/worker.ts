@@ -1,58 +1,39 @@
-import * as WebSocket from 'ws';
 import { Message } from '../core/message';
 import { events } from './events';
+import { Transport } from './transport';
 
 export class Worker {
-  public url: string;
-  public wss: any;
+  public transport: Transport;
 
   constructor(worker?: Partial<Worker>) {
-    this.url = worker?.url ?? 'ws://localhost:9000';
-    this.wss = worker?.wss ?? null;
+    this.transport = worker?.transport ?? null;
   }
 
   public start(): void {
-    this.connect();
+    this.transport.onConnected = this.onConnected.bind(this);
+    this.transport.onMessageReceived = this.onMessageReceived.bind(this);
+
+    this.transport.connect();
   }
 
   public stop(): void {
-    this.disconnect();
+    this.transport.disconnect();
   }
 
-  private connect(): void {
-    if (!this.wss) {
-      this.wss = new WebSocket(this.url);
-
-      this.wss.on('open', this.onConnected.bind(this));
-      this.wss.on('message', this.onMessageReceived.bind(this));
-    }
-  }
-
-  private disconnect(): void {
-    if (this.wss) {
-      this.wss.close();
-      this.wss = null;
-    }
+  private sendMessage(event: string, data?: any): void {
+    this.transport.send(event, data);
   }
 
   private onConnected(): void {
     this.requestWork();
   }
 
+  private onMessageReceived(message: Message): void {
+    this.processMessage(message);
+  }
+
   private requestWork(): void {
     this.sendMessage('work-request');
-  }
-
-  private sendMessage(event: string, data?: any): void {
-    const message = new Message({ event, data });
-
-    this.wss.send(message.serialize());
-  }
-
-  private onMessageReceived(message: string): void {
-    const deserializedMessage = Message.deserialize(message);
-
-    this.processMessage(deserializedMessage);
   }
 
   private processMessage(message: Message): void {
